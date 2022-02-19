@@ -247,3 +247,20 @@ Usage: ./flashrom [-h|-R|-L|
 
 You can specify one of -h, -R, -L, -E, -r, -w, -v or no operation.
 If no operation is specified, flashrom will only probe for flash chips.
+
+example:
+
+./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=2000  --otp-status
+flashrom v1.2-585-g3542afe on Linux 4.19.57-v7l+ (armv7l)
+flashrom is free software, get the source code at https://flashrom.org
+
+Using clock_gettime for delay loops (clk_id: 1, resolution: 1ns).
+Found Winbond flash chip "W25Q128.V" (16384 kB, SPI) on linux_spi.
+W25Q128.V contains 3 OTP regions:
+ 1. 256 bytes
+    Permanently locked and cannot be erased or written to.
+ 2. 256 bytes
+    Permanently locked and cannot be erased or written to.
+ 3. 256 bytes
+    Not yet locked.
+
