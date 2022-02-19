@@ -186,3 +186,64 @@ The official flashrom website is:
 Available contact methods are
 
   https://www.flashrom.org/Contact
+
+
+./flashrom --help
+flashrom v1.2-585-g3542afe on Linux 5.10.0-9-amd64 (x86_64)
+flashrom is free software, get the source code at https://flashrom.org
+
+Usage: ./flashrom [-h|-R|-L|
+    -p <programmername>[:<parameters>] [-c <chipname>]
+        (--flash-name|--flash-size|
+         [-E|-x|(-r|-w|-v) <file>]
+         [(-l <layoutfile>|--ifd| --fmap|--fmap-file <file>) [-i <region>[:<file>]]...]
+         [-n] [-N] [-f])]
+    [-V[V[V]]] [-o <logfile>]
+
+ -h | --help                        print this help text
+ -R | --version                     print version (release)
+ -r | --read <file>                 read flash and save to <file>
+ -w | --write <file|->              write <file> or the content provided
+                                    on the standard input to flash
+ -v | --verify <file|->             verify flash against <file>
+                                    or the content provided on the standard input
+ -E | --erase                       erase flash memory
+ -V | --verbose                     more verbose output
+ -c | --chip <chipname>             probe only for specified flash chip
+ -f | --force                       force specific operations (see man page)
+ -n | --noverify                    don't auto-verify
+ -N | --noverify-all                verify included regions only (cf. -i)
+ -x | --extract                     extract regions to files
+ -l | --layout <layoutfile>         read ROM layout from <layoutfile>
+      --wp-disable                  disable write protection
+      --wp-enable                   enable write protection
+      --wp-list                     list supported write protection ranges
+      --wp-status                   show write protection status
+      --wp-range=<start>,<len>      set write protection range (use --wp-range=0,0
+                                    to unprotect the entire flash)
+      --wp-region <region>          set write protection region
+      --otp-status                  print information about OTP regions
+      --otp-region <otp-region>     OTP region number (base 1) to operate on
+      --otp-read <file>             read OTP region and save it to <file>
+      --otp-write <file>            write <file> to OTP region
+      --otp-erase                   erase OTP region
+      --otp-lock                    lock OTP region
+      --flash-name                  read out the detected flash name
+      --flash-size                  read out the detected flash size
+      --fmap                        read ROM layout from fmap embedded in ROM
+      --fmap-file <fmapfile>        read ROM layout from fmap in <fmapfile>
+      --ifd                         read layout from an Intel Firmware Descriptor
+ -i | --image <region>[:<file>]     only read/write image <region> from layout
+                                    (optionally with data from <file>)
+ -o | --output <logfile>            log output to <logfile>
+      --flash-contents <ref-file>   assume flash contents to be <ref-file>
+ -L | --list-supported              print supported devices
+ -p | --programmer <name>[:<param>] specify the programmer device. One of
+    internal, dummy, nic3com, nicrealtek, gfxnvidia, raiden_debug_spi, drkaiser,
+    satasii, atavia, it8212, ft2232_spi, serprog, buspirate_spi, dediprog,
+    developerbox, rayer_spi, pony_spi, nicintel, nicintel_spi, nicintel_eeprom,
+    ogp_spi, satamv, linux_mtd, linux_spi, usbblaster_spi, pickit2_spi,
+    ch341a_spi, digilent_spi, stlinkv3_spi.
+
+You can specify one of -h, -R, -L, -E, -r, -w, -v or no operation.
+If no operation is specified, flashrom will only probe for flash chips.
